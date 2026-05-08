@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; form-action 'self'; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; form-action 'none'; frame-ancestors 'none';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="stylesheet" href="style.css">
     <title>ContactUs</title>
@@ -13,12 +13,12 @@
     <section class="contact-section">
         <h1>Contact Us</h1>
         <p>If you have any questions or feedback, reach us here!</p>
-        <form class="contact-form" action="submit_contact.php" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone Number (optional)">
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+        <form class="contact-form" onsubmit="return false;">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone Number (optional)">
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="button" onclick="alert('Thank you for reaching out! We will respond soon.');">Send Message</button>
         </form>
     </section>
 </body>

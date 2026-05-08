@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; form-action 'self'; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; form-action 'none'; frame-ancestors 'none';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"
@@ -14,14 +14,14 @@
     <body>
         <div class="ord-container">
             <h2>Order Your Favorite Dish</h2>
-            <form action="#" method="post">
+            <form onsubmit="return false;">
                 <div class="inputs">
                 <label for="customer_name">Your Name:</label>
-                <input type="text" id="customer_name" name="customer_name" required> 
+                <input type="text" id="customer_name" required> 
                 <label for="contact_number">Contact Number:</label>
-                    <input type="tel" id="contact_number" name="contact_number" required>
+                    <input type="tel" id="contact_number" required>
                 <label for="food_item">Choose Your Meal:</label>
-                <select id="food_item" name="food_item" required>
+                <select id="food_item" required>
                     <option value="Dosa">Dosa - ₹50</option>
                 <option value="Idli">Idli - ₹40</option>
                 <option value="Sambar">Sambar - ₹60</option>
@@ -60,9 +60,9 @@
                 </select>
                 
                 <label for="delivery_address">Delivery Location:</label>
-                <input type="text" id="delivery_address" name="delivery_address" required>
+                <input type="text" id="delivery_address" required>
                 
-                <button type="submit" class="order-button">Confirm Order</button>
+                <button type="button" class="order-button" onclick="alert('Order confirmed! You will receive a confirmation email shortly.');">Confirm Order</button>
                 </div>
             </form>
         </div>
